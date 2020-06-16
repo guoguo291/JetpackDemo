@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_home"
+    app:startDestination="@id/jetpackFragment">
+    <fragment
+        android:id="@+id/textFragment"
+        android:name="com.guoj.jetpackdemo.fragment.TextFragment"
+        android:label="fragment_text"
+        tools:layout="@layout/fragment_text" />
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.guoj.jetpackdemo.fragment.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" />
+    <!--这里的 android:id="@+id/pagerFragment需要和menu关联的话必须与menu的id一样-->
+    <fragment
+        android:id="@+id/pagerFragment"
+        android:name="com.guoj.jetpackdemo.fragment.PagerFragment"
+        android:label="fragment_pager"
+        tools:layout="@layout/fragment_pager" />
+    <fragment
+        android:id="@+id/jetpackFragment"
+        android:name="com.guoj.jetpackdemo.fragment.JetpackFragment"
+        android:label="fragment_jetpack"
+        tools:layout="@layout/fragment_jetpack" >
+        <action
+            android:id="@+id/action_homeFragment_to_workManagerFragment"
+            app:destination="@id/workManagerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_coroutineFragment2"
+            app:destination="@id/coroutineFragment" />
+        <action
+            android:id="@+id/action_jetpackFragment_to_databindingFragment"
+            app:destination="@id/databindingFragment" />
+        <action
+            android:id="@+id/action_jetpackFragment_to_liveDataFragment"
+            app:destination="@id/liveDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workManagerFragment"
+        android:name="com.guoj.jetpackdemo.fragment.WorkManagerFragment"
+        android:label="work_manager_fragment"
+        tools:layout="@layout/work_manager_fragment" />
+    <fragment
+        android:id="@+id/coroutineFragment"
+        android:name="com.guoj.jetpackdemo.fragment.CoroutineFragment"
+        android:label="coroutine_fragment"
+        tools:layout="@layout/coroutine_fragment" />
+    <fragment
+        android:id="@+id/databindingFragment"
+        android:name="com.guoj.jetpackdemo.fragment.DatabindingFragment"
+        android:label="DatabindingFragment" />
+    <fragment
+        android:id="@+id/liveDataFragment"
+        android:name="com.guoj.jetpackdemo.fragment.LiveDataFragment"
+        android:label="live_data_fragment"
+        tools:layout="@layout/live_data_fragment" />
+</navigation>
