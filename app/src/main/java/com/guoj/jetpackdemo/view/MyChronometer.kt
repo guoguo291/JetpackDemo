@@ -21,7 +21,7 @@ class MyChronometer @JvmOverloads constructor(
     lateinit var viewModel:LifecycleViewModel
     fun setViewModle(viewModel:LifecycleViewModel){
         this.viewModel=viewModel
-        this.elapsedTime=viewModel.elapsedTime
+        this.elapsedTime=viewModel.getMyElapsedTime()
     }
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     private fun startMeter() {
@@ -32,7 +32,7 @@ class MyChronometer @JvmOverloads constructor(
     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
     private fun pauseMeter() {
         elapsedTime = SystemClock.elapsedRealtime()-base
-        viewModel.elapsedTime=elapsedTime
+        viewModel.setMyElapsedTime(elapsedTime)
         stop()
     }
 }

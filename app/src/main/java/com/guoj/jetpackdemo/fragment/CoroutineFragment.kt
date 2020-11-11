@@ -1,17 +1,16 @@
 package com.guoj.jetpackdemo.fragment
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.guoj.jetpackdemo.R
 import com.guoj.jetpackdemo.databinding.CoroutineFragmentBinding
-import kotlinx.coroutines.*
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class CoroutineFragment : Fragment() {
 
