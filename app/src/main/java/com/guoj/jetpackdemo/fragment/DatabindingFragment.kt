@@ -33,6 +33,10 @@ class DatabindingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        arguments?.let {
+            user.name=it.getString("name")?:""
+            user.age=it.getInt("age")
+        }
         binding.tvUserinfo.text = user.toString()
         binding.btnUpdateAge.setOnClickListener { user.age += 1 }
         binding.btnUpdateName.setOnClickListener {

@@ -47,5 +47,13 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.023255814" />
+
+        <Button
+            android:id="@+id/btn_lifecycle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_Lifecycle"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/btn_livedata" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

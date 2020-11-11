@@ -47,7 +47,9 @@ class JetpackFragment : Fragment() {
             btnLivedata.setOnClickListener {
                 navController.navigate(R.id.action_jetpackFragment_to_liveDataFragment)
             }
-
+            btnLifecycle.setOnClickListener {
+                navController.navigate(R.id.action_jetpackFragment_to_lifecycleFragment)
+            }
         }
     }
 

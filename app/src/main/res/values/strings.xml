@@ -61,4 +61,5 @@ Aliquam mauris risus, sagittis ac feugiat id, aliquam nec quam. Integer tempus t
     <string name="tv_livedata">LiveData信息</string>
     <string name="et_hint_livedata">录入信息</string>
     <string name="btn_livedata">Livedata</string>
+    <string name="btn_Lifecycle">Lifecycle</string>
 </resources>
