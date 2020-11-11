@@ -7,6 +7,7 @@ import android.widget.Chronometer
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
+import com.guoj.jetpackdemo.fragment.LifecycleViewModel
 
 class MyChronometer @JvmOverloads constructor(
     context: Context,
@@ -17,7 +18,11 @@ class MyChronometer @JvmOverloads constructor(
     //    constructor(context:Context,attrs:AttributeSet?):this(context,attrs,0)
     //    constructor(context:Context,attrs:AttributeSet?,defStyleAttr:Int):super(context,attrs,defStyleAttr)
      var elapsedTime:Long=0
-
+    lateinit var viewModel:LifecycleViewModel
+    fun setViewModle(viewModel:LifecycleViewModel){
+        this.viewModel=viewModel
+        this.elapsedTime=viewModel.elapsedTime
+    }
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     private fun startMeter() {
         base=SystemClock.elapsedRealtime()-elapsedTime
@@ -27,6 +32,7 @@ class MyChronometer @JvmOverloads constructor(
     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
     private fun pauseMeter() {
         elapsedTime = SystemClock.elapsedRealtime()-base
+        viewModel.elapsedTime=elapsedTime
         stop()
     }
 }
